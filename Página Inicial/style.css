@@ -1,0 +1,90 @@
+/* 
+#e20a3d – Vermelho
+#8db0db – Azul
+#7030a0 – Roxo
+#f9fafa – Branco
+#00224d – Azul escuto 
+*/
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #8db0db;
+}
+#cabecario{
+    position: sticky;
+    top: 0px;
+    padding: 10px;
+    background-color: #00224d;
+}
+
+#logo{
+    width: 6%;
+    padding-right: 5px;
+}
+#letreiro{
+    width: 15%;
+    padding-bottom: 10px;
+    padding-right: 5px;
+}
+#opcoes{
+    position: relative;
+    bottom: 50%;
+    float: right;
+    margin: 30px;
+
+}
+.link1{
+    color: #e20a3d;
+    text-decoration: none;
+    font-size: x-large;
+    font-weight: bold;
+    padding: 20px;
+}
+.link1:hover{
+    color: #7030a0;
+    text-decoration: underline;
+}
+#entrar{
+    background-color: #f9fafa;
+    margin-left: 70px;
+    padding: 3px 10px;
+    border-radius: 50px;
+    float: right;
+}
+
+#frase{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #f9fafa;
+    font-size: x-large;
+    margin: 150px 0px;
+}
+
+#crie{
+    display: inline-block;
+    margin: 50px;
+    color: #f9fafa;
+    background-color: #e20a3d;
+    border-radius: 100px;
+    text-decoration: none;
+}
+
+#info{
+    background-color: #00224d;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+#coment{
+    display: inline-block;
+    border: gray solid 1px ;
+    margin: 30px;
+    padding: 20px;
+    color: #f9fafa;
+    width: 25%;
+    text-align: justify;
+    
+}
