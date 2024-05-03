@@ -66,16 +66,18 @@ body{
     font-size: x-large;
     margin: 150px 0px;
 }
-
 #crie{
     display: inline-block;
-    margin: 50px 50px;
+    margin: 40px 40px;
     color: #f9fafa;
     background-color: #e20a3d;
     border-radius: 100px;
     text-decoration: none;
 }
-
+.aprinc:hover{
+    color: #7030a0;
+    text-decoration: underline;
+}
 #info{
     background-color: #00224d;
     width: 100%;
@@ -130,11 +132,33 @@ h3{
 #redes{
     display: inline-block;
     padding: 4px;
-    width: 500px;
+    width: 150px;
+    position: relative;
+    bottom: 15px;
 }
-
 #complemento{
-    display: inline-block;
+    float: right;
+    margin-top: 50px ;
     padding: 4px;
     width: 200px;
+    font-size: large;
+}
+#app{
+    border-bottom: gray solid 1px;
+    margin: 10px 30px 5px;
+    padding: 10px 20px;
+    
+}
+#sobre{
+    display: inline-block;
+    padding: 4px;
+}
+#bp{
+    color: #f9fafa;
+    padding-bottom: 10px;
+}
+#expl{
+    color: #f9fafa;
+    font-size: larger;
+    padding: 10px;
 }
