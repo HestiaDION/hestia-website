@@ -127,3 +127,14 @@ h3{
     color: #f9fafa;
     padding-bottom: 10px;
 }
+#redes{
+    display: inline-block;
+    padding: 4px;
+    width: 500px;
+}
+
+#complemento{
+    display: inline-block;
+    padding: 4px;
+    width: 200px;
+}
