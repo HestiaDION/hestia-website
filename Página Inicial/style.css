@@ -23,17 +23,27 @@ body{
 #logo{
     width: 6%;
     padding-right: 5px;
+    padding-bottom: 20px;
+    display: inline-flex;
 }
 #letreiro{
     width: 15%;
-    padding-bottom: 10px;
     padding-right: 5px;
+    display: inline-flex;
+    justify-content: center;
+    padding-top: 30px;
+
 }
 #opcoes{
     position: relative;
     bottom: 50%;
     float: right;
     margin: 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: nowrap;
+
 
 }
 .link1{
@@ -52,7 +62,9 @@ body{
     margin-left: 70px;
     padding: 3px 10px;
     border-radius: 50px;
+    padding-top: 20px;
     float: right;
+    
 }
 #pbaixe{
     font-family: 'Courier New', Courier, monospace;
