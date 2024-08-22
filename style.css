@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: #e20a3d;
+    overflow-x: hidden;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h3 {
+    font-size: 32px;
+}
+
+h5 {
+    font-size: 20px;
+}
+
+.hero-background {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.title-section {
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    color: var(--white);
+
+    h1 {
+        width: 650px;
+        font-weight: 800;
+        text-transform: uppercase;
+        font-family: "Montserrat", sans-serif;
+        text-shadow:
+        0 0 10px #fff;
+        letter-spacing: 2px;
+    }
+
+    h3 {
+        font-family: 'Poppins';
+    }
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 500px;
+
+    a {
+        font-family: 'Poppins';
+        font-size: 20px;
+        color: var(--white);
+        text-decoration: none;
+    }
+}
+
+.nav {
+    width: 100%;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 60px;
+    box-sizing: border-box;
+
+    #logo {
+        width: 120px;
+    }
+}
+
+.sign-up {
+    color: var(--dark-blue);
+    background-color: var(--white);
+    padding: 7.5px 60px;
+    border-radius: 30px;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
