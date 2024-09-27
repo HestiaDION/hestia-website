@@ -1,15 +1,14 @@
 let centerIndex = 2;
-const advantages = document.querySelectorAll('.advantage')
-const advantagesElements = Array.from(advantages)
 const previous = document.getElementById('previous')
-const advantagesParent = advantagesElements[0].parentNode
+const advantagesParent = document.querySelectorAll('.advantages')
 const next = document.getElementById('next')
+const loader = document.getElementById('preloader')
 
 
 previous.addEventListener('click', () => {
     const advantagesElements = Array.from(document.querySelectorAll('.advantage'))
     let item = advantagesElements.pop()
-    advantagesParent.prepend(item)
+    advantagesElements[0].parentNode.prepend(item)
     advantagesElements.unshift(item)
     
     advantagesElements.forEach((adventage, index) => {
@@ -29,12 +28,12 @@ previous.addEventListener('click', () => {
             adventage.classList.add('hide')
         }
     });
-})
+})  
 
 next.addEventListener('click', () => {
     const advantagesElements = Array.from(document.querySelectorAll('.advantage'))
     let item = advantagesElements.shift()
-    advantagesParent.appendChild(item)
+    advantagesElements[0].parentNode.appendChild(item)
     advantagesElements.push(item)
     
     advantagesElements.forEach((adventage, index) => {
@@ -56,14 +55,8 @@ next.addEventListener('click', () => {
     });
 })
 
-advantages.forEach((adventage, index) => {
-    position = Math.abs(index - centerIndex)
 
-    if (position === 0){
-        adventage.classList.toggle('main')
-    } else if (position === 1){
-        adventage.classList.toggle('submain')
-    } else {
-        adventage.classList.toggle('hide')
-    }
-});
+window.addEventListener("load", function(){
+    loader.classList.add('loaded')
+    document.body.classList.add('scrolling-allowed')
+})

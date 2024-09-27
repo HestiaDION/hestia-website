@@ -9,6 +9,20 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow: hidden;
+}
+
+.scrolling-allowed {
+    animation: allow-scrolling both 0s 1.5s;
+}
+
+@keyframes allow-scrolling {
+    to {
+        overflow: auto;
+    }
+}
+
 h1 {
     font-size: 48px;
     width: 650px;
@@ -33,6 +47,39 @@ h5 {
 p {
     font-size: 18px;
     font-family: 'Poppins';
+}
+
+first {
+    animation: reveal-text both 0.75s var(--delay);
+    position: relative;
+    top: 0;
+}
+
+second {
+    animation: reveal-text both 0.75s 3s;
+    position: relative;
+    top: 0;
+}
+
+third {
+    animation: reveal-text both 0.75s 4s;
+    position: relative;
+    top: 0;
+}
+
+reveal-text {
+    animation: reveal-text both 0.75s var(--delay);
+    position: relative;
+    top: 0;
+}
+
+@keyframes
+reveal-text {
+    from {
+        opacity: 0;
+        top: 50px;
+        filter: blur(15px);
+    }
 }
 
 .hero-background {
@@ -96,7 +143,7 @@ p {
 
 .functionalities {
     position: relative;
-    background-image: url(images/backgrounds/functionalities.svg);
+    background-image: url(images/backgrounds/functionalities.png);
     background-size: contain;
     aspect-ratio: 1366/661;
     width: 100%;
@@ -206,6 +253,7 @@ p {
     height: 95%;
     background-position: center;
     background-color: var(--white);
+    object-fit: cover;
 }
 
 .phone-display {
@@ -252,6 +300,7 @@ p {
     padding: 150px 0px;
     flex-direction: column;
     gap: 30px;
+    overflow: hidden;
 }
 
 .carousel {
@@ -334,4 +383,29 @@ p {
     justify-content: center;
     font-size: 14px;
     color: var(--white);
+}
+
+#preloader {
+    background: var(--red) url(images/icons/preloader.svg) no-repeat center center;
+    background-size: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 6%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+
+.loaded {
+    animation: loadedAnimation both 1s 0.5s;
+}
+
+@keyframes
+loadedAnimation {
+    to {
+        height: 0vh;
+        background-size: 0;
+    }
 }
