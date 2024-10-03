@@ -1,30 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
 
 * {
     margin: 0px;
     padding: 0px;
 }
 
-body {
-    background-color: #e20a3d;
-    overflow-x: hidden;
+html {
+    scroll-behavior: smooth;
 }
 
 h1 {
     font-size: 48px;
+    width: 650px;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-family: "Montserrat", sans-serif;
+    text-shadow:
+    0 0 10px var(--white);
+    letter-spacing: 2px;
 }
 
 h3 {
     font-size: 32px;
+    font-family: 'Poppins';
 }
 
 h5 {
     font-size: 20px;
+    font-family: 'Poppins';
+}
+
+p {
+    font-size: 18px;
+    font-family: 'Poppins';
 }
 
 .hero-background {
     width: 100%;
-    position: absolute;
+    position: relative;
     top: 0;
     z-index: -1;
 }
@@ -32,22 +45,8 @@ h5 {
 .title-section {
     position: absolute;
     top: 25%;
-    left: 10%;
+    left: 12.5%;
     color: var(--white);
-
-    h1 {
-        width: 650px;
-        font-weight: 800;
-        text-transform: uppercase;
-        font-family: "Montserrat", sans-serif;
-        text-shadow:
-        0 0 10px #fff;
-        letter-spacing: 2px;
-    }
-
-    h3 {
-        font-family: 'Poppins';
-    }
 }
 
 .nav-content {
@@ -72,6 +71,8 @@ h5 {
     align-items: center;
     padding: 0px 60px;
     box-sizing: border-box;
+    position: absolute;
+    top: 0;
 
     #logo {
         width: 120px;
@@ -83,6 +84,165 @@ h5 {
     background-color: var(--white);
     padding: 7.5px 60px;
     border-radius: 30px;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+.button {
+    background: linear-gradient(135deg, #195198, #002758);
+    padding: 15px 60px;
+    display: inline-block;
+    border-radius: 30px;
+    margin-top: 15px;
+}
+
+.functionalities {
+    position: relative;
+    background-image: url(section-2.svg);
+    background-size: contain;
+    aspect-ratio: 1366/661;
+    width: 100%;
+    background-repeat: no-repeat;
+    color: var(--white);
+    padding: 125px 125px 0px;
+    box-sizing: border-box;
+
+    h5 {
+        max-width: 540px;
+    }
+}
+
+.role-buttons {
+    margin-top: 10px;
+    display: flex;
+    gap: 20px;
+}
+
+.role-button {
+    width: 224px;
+    height: 60px;
+    background: linear-gradient(135deg, #00548f, #00548f);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    color: var(--white);
+    text-decoration: none;
+    transition: all 1s;
+    font-weight: 100;
+}
+
+.role-button:target {
+    background: linear-gradient(135deg, var(--dark-blue), #00548f);
+    font-weight: 800;
+}
+
+.functionalities-explained {
+    display: none;
+    margin-top: 30px;
+    width: 100%;
+    height: 250px;
+    background-color: var(--white);
+    color: var(--dark-blue);
+    border-radius: 30px;
+    border: 2px solid var(--dark-blue);
+    justify-content: space-evenly;
+    align-items: center;
+
+    p {
+        width: 250px;
+        text-align: center;
+    }
+}
+
+.functionality {
+    display: flex;
+    height: 60%;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0px;
+}
+
+.vertical-line {
+    height: 75%;
+    border-radius: 5px;
+    width: 1.6px;
+    background-color: var(--dark-blue);
+}
+
+.square {
+    width: 60px;
+    height: 60px;
+}
+
+.role-buttons:has(#advertise:target) ~ #landlord-functionalities {
+    display: flex;
+}
+
+.role-buttons:has(#search:target)  ~ #student-functionalities {
+    display: flex;
+}
+
+.phone-container {
+    width: calc(520px/2);
+    height: calc(1030px/2);
+    position: relative;
+    transform: translateY(-15%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+}
+
+.phone {
+    width: 100%;
+    height: 100%;
+    background-image: url(phone.png);
+    background-size: cover;
+    position: absolute;
+}
+
+.phone-background {    
+    width: 90%;
+    height: 95%;
+    /* background-image: url(lucas.png); */
+    background-position: center;
+    /* object-fit: cover; */
+    background-color: var(--white);
+}
+
+.phone-display {
+    justify-content: end;
+    width: 30%;
+}
+
+.advantage {
+    border-radius: 100%;
+    width: 450px;
+    height: 450px;
+    background-color: var(--dark-blue);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+
+    p {
+        width: 80%;
+        text-align: center;
+    }
+}
+
+.advantages-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.advantages {
+    display: flex;
+
+}
+
+.advantage:nth-child(var(--n)){
+    background-color: red;
+}
