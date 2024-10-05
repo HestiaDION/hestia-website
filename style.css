@@ -9,6 +9,20 @@ html {
     scroll-behavior: smooth;
 }
 
+body {
+    overflow: hidden;
+}
+
+.scrolling-allowed {
+    animation: allow-scrolling both 0s 1.5s;
+}
+
+@keyframes allow-scrolling {
+    to {
+        overflow: auto;
+    }
+}
+
 h1 {
     font-size: 48px;
     width: 650px;
@@ -35,11 +49,44 @@ p {
     font-family: 'Poppins';
 }
 
+first {
+    animation: reveal-text both 0.75s var(--delay);
+    position: relative;
+    top: 0;
+}
+
+second {
+    animation: reveal-text both 0.75s 3s;
+    position: relative;
+    top: 0;
+}
+
+third {
+    animation: reveal-text both 0.75s 4s;
+    position: relative;
+    top: 0;
+}
+
+reveal-text {
+    animation: reveal-text both 0.75s var(--delay);
+    position: relative;
+    top: 0;
+}
+
+@keyframes
+reveal-text {
+    from {
+        opacity: 0;
+        top: 50px;
+        filter: blur(15px);
+    }
+}
+
 .hero-background {
     width: 100%;
     position: relative;
-    top: 0;
     z-index: -1;
+    display: block;
 }
 
 .title-section {
@@ -96,7 +143,7 @@ p {
 
 .functionalities {
     position: relative;
-    background-image: url(section-2.svg);
+    background-image: url(images/backgrounds/functionalities.png);
     background-size: contain;
     aspect-ratio: 1366/661;
     width: 100%;
@@ -196,7 +243,7 @@ p {
 .phone {
     width: 100%;
     height: 100%;
-    background-image: url(phone.png);
+    background-image: url(images/phone.png);
     background-size: cover;
     position: absolute;
 }
@@ -204,10 +251,9 @@ p {
 .phone-background {    
     width: 90%;
     height: 95%;
-    /* background-image: url(lucas.png); */
     background-position: center;
-    /* object-fit: cover; */
     background-color: var(--white);
+    object-fit: cover;
 }
 
 .phone-display {
@@ -217,22 +263,48 @@ p {
 
 .advantage {
     border-radius: 100%;
-    width: 450px;
-    height: 450px;
-    background-color: var(--dark-blue);
+    background-color: var(--light-blue);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: var(--white);
+    color: var(--blue);
+    transition: all 1s;
+    text-align: center;
+    margin: 0px -30px;
+
+
+    .square {
+        width: 120px;
+        height: 120px;
+        transition: all 1s;
+    }
 
     p {
         width: 80%;
-        text-align: center;
+        font-size: 16px;
+        transition: all 1s;
+    }
+
+    h3 {
+        font-weight: 900;
+        font-size: 32px;
+        transition: all 1s;
     }
 }
 
 .advantages-section {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue);
+    padding: 150px 0px;
+    flex-direction: column;
+    gap: 30px;
+    overflow: hidden;
+}
+
+.carousel {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -240,9 +312,100 @@ p {
 
 .advantages {
     display: flex;
-
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 450px;
 }
 
-.advantage:nth-child(var(--n)){
-    background-color: red;
+.advantage.main {
+    width: 450px;
+    height: 450px;
+    z-index: 2;
+}
+
+
+.advantage.submain {
+    width: 350px;
+    height: 350px;
+    opacity: 0.9;
+
+    .square {
+        width: 75px;
+        height: 75px;
+    }
+
+    h3 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 14px;
+        width: 75%;
+    }
+    z-index: 1;
+}
+
+.advantage.hide {
+    width: 0px;
+    height: 0px;
+    margin: 0px;
+
+    .square {
+        width: 0px;
+        height: 20px;
+    }
+
+    h3 {
+        font-size: 0px;
+    }
+
+    p {
+        font-size: 0px;
+    }
+    z-index: 0;
+}
+
+#previous, #next {
+    width: 50px;
+    height: 50px;
+}
+
+.advantages-button {
+    width: 200px;
+    height: 50px;
+    background: linear-gradient(var(--blue), var(--blue)) padding-box,
+              linear-gradient(to right, rgb(from var(--light-blue) r g b / 50%), var(--light-blue), rgb(from var(--light-blue) r g b / 50%)) border-box;
+    border-radius: 50em;
+    border: 4px solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: var(--white);
+}
+
+#preloader {
+    background: var(--red) url(images/icons/preloader.svg) no-repeat center center;
+    background-size: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-size: 6%;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    z-index: 10;
+}
+
+.loaded {
+    animation: loadedAnimation both 1s 0.5s;
+}
+
+@keyframes
+loadedAnimation {
+    to {
+        height: 0vh;
+        background-size: 0;
+    }
 }
