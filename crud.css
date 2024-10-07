@@ -130,7 +130,7 @@ li:hover {
 }
 
 .button:hover {
-    letter-spacing: 1rem;
+    letter-spacing: 0.8rem;
 }
 
 .table-header {
