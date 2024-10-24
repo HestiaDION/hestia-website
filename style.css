@@ -12,10 +12,15 @@ html {
 
 body {
     overflow: hidden;
+    background-color: var(--white);
 }
 
 .scrolling-allowed {
     overflow: auto;
+}
+
+img {
+    display: block;
 }
 
 h1 {
@@ -57,7 +62,6 @@ reveal-text {
     width: 100%;
     position: relative;
     z-index: -1;
-    display: block;
 }
 
 .title-section {
@@ -121,10 +125,11 @@ reveal-text {
     position: absolute;
     top: 0;
     z-index: 3;
+}
 
-    #logo {
-        width: 12rem;
-    }
+#logo {
+    width: 12rem;
+    padding-bottom: 1rem;
 }
 
 .blue-text a {
@@ -160,6 +165,39 @@ reveal-text {
     box-sizing: border-box;
 }
 
+.button {
+    padding: 1rem 3rem;
+    background: linear-gradient(var(--red), var(--red)) padding-box,
+              linear-gradient(to right, rgb(from var(--light-blue) r g b / 50%), var(--light-blue), rgb(from var(--light-blue) r g b / 50%)) border-box;
+    border-radius: 50rem;
+    border: 0.4rem solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    transition: 0.2s cubic-bezier(.175,.885,.32,1.3);
+    cursor: pointer;
+}
+
+.red-button {
+    padding: 1rem 3rem;
+    background: linear-gradient(var(--white), var(--white)) padding-box,
+              linear-gradient(to right, rgb(from var(--red) r g b / 50%), var(--red), rgb(from var(--red) r g b / 50%)) border-box;
+    border-radius: 50rem;
+    border: 0.4rem solid transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(---red);
+    transition: 0.2s cubic-bezier(.175,.885,.32,1.3);
+    cursor: pointer;
+    word-spacing: 0.2rem;
+}
+
+.button:hover, .red-button:hover {
+    letter-spacing: 0.25rem;
+}
+
 .functionalities {
     background-image: url(images/backgrounds/functionalities.png);
     aspect-ratio: 1366/661;
@@ -179,6 +217,11 @@ reveal-text {
         top: 0;
         animation: reveal-text both;
         animation-timeline: view(50% 25%);
+    }
+
+    .icon {
+        width: 7.5rem;
+        height: 7.5rem;
     }
 }
 
@@ -240,6 +283,31 @@ reveal-text {
     align-items: center;
     flex-direction: column;
     padding: 5rem 0rem;
+
+    .red-button {
+        font-family: 'Poppins';
+        opacity: 0;
+        font-size: 0;
+    }
+}
+
+.functionality:hover {
+    p {
+        opacity: 0;
+        font-size: 0;
+    }
+
+    .red-button {
+        opacity: 1;
+        font-size: 1.8rem;
+        color: var(--red);
+        font-weight: 600;
+    }
+}
+
+.phone-display:hover p {
+    opacity: 1;
+    font-size: 1.8rem;
 }
 
 .vertical-line {
@@ -324,7 +392,7 @@ reveal-text {
 .advantages-section {
     display: flex;
     align-items: center;
-    background-color: var(--blue);
+    background-color: var(--red);
     padding: 15rem 0rem;
     flex-direction: column;
     gap: 3rem;
@@ -399,25 +467,6 @@ reveal-text {
     height: 5rem;
 }
 
-.advantages-button {
-    padding: 1rem 3rem;
-    background: linear-gradient(var(--blue), var(--blue)) padding-box,
-              linear-gradient(to right, rgb(from var(--light-blue) r g b / 50%), var(--light-blue), rgb(from var(--light-blue) r g b / 50%)) border-box;
-    border-radius: 50rem;
-    border: 0.4rem solid transparent;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 14rem;
-    color: var(--white);
-    transition: 0.2s cubic-bezier(.175,.885,.32,1.3);
-    cursor: pointer;
-}
-
-.advantages-button:hover {
-    letter-spacing: 0.25rem;
-}
-
 #preloader {
     background: var(--red) url(images/icons/preloader.svg) no-repeat center center;
     background-size: 6%;
@@ -425,6 +474,10 @@ reveal-text {
     width: 100vw;
     position: fixed;
     z-index: 10;
+}
+
+.blue-preloader {
+    background-color: var(--blue) !important;
 }
 
 .loaded {
@@ -587,9 +640,10 @@ close-form {
 }
 
 .anwsers {
-    background-image: url(FAQ\ \(3\).png);
+    background-image: url(images/backgrounds/Q&A.png);
     color: var(--white);
     padding: 6.25rem 12.5rem 0rem;
+    aspect-ratio: 1366/661;
 }
 
 .anwsers h1 {
@@ -619,22 +673,64 @@ close-form {
 }
 
 .question-card {
-    background-color: rgb(from var(--light-blue) r g b / 80%);
-    backdrop-filter: blur(0.5rem);
+    background-color: rgb(from var(--blue) r g b / 20%);
+    backdrop-filter: blur(1rem);
     border-radius: 0.8rem;
     box-shadow: rgb(from var(--blue) r g b / 50%) 0rem 2rem 3rem -1rem;
-    border: 0.2rem var(--dark-blue) solid;
+    border: 0.2rem rgb(from var(--blue) r g b / 40%) solid;
     color: var(--dark-blue);
     text-align: center;
-    padding: 1.6rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+    padding: 0.6rem;
     position: relative;
     bottom: 0;
     transition: 0.5s cubic-bezier(.175,.885,.32,1.3);
+
+    .question-image {
+        height: 24rem;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 0.8rem 0.8rem 0rem 0rem;
+        position: relative;
+
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border-radius: 0.8rem 0.8rem 0rem 0rem;
+            scale: 1.1;
+        }
+
+        &:hover img{
+            animation: 0.4s pulse cubic-bezier(.175,.885,.32,1.3);
+        }
+    }
+
+    .anwser {
+        padding: 1rem 0.5rem;
+        background-color: var(--white);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        box-sizing: border-box;
+        gap: 0.25rem;
+        border-radius: 0rem 0rem 0.8rem 0.8rem;
+        height: calc(100% - 24rem);
+    }
 }
+
+@keyframes pulse {
+    from, to {
+        scale: 1.1;
+    }
+
+    50% {
+        scale: 1.18;
+    }
+}
+
 
 .question-card:hover {
     bottom: 2rem;
@@ -642,29 +738,168 @@ close-form {
 }
 
 .about-us {
-    background-image: url(Sobre\ nós\ \(1\).png);
+    background-image: url(images/backgrounds/Sobre\ nós.png);
+    color: var(--white);
     padding: 18rem 12.5rem 0rem;
     aspect-ratio: 1366/661;
-    color: var(--dark-blue);
 }
 
 .about-us h1 {
-    text-shadow:
-    0rem 0rem 2rem var(--blue);
-    color: var(--white);
-    animation: reveal-text both;
-    animation-timeline: view(50% 25%);
+    width: 80rem;
 }
 
-.about-us h3 {
-    max-width: 50rem;
-    font-weight: 200;
-    animation: reveal-text both;
-    animation-timeline: view(50% 25%);
+.our-mission {
+    background-image: url(images/backgrounds/Blue\ background.png);
+    color: var(--white);
+    padding: 0rem 12.5rem;
+    aspect-ratio: 1366/661;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .content {
+        max-width: 45%;
+    }
+}
+
+.our-team {
+    background-image: url(images/backgrounds/Blue\ wave.png);
+    color: var(--dark-blue);
+    padding: 18rem 12.5rem 0rem;
+    aspect-ratio: 1366/661;
+
+    h1 {
+        text-shadow:
+        0 0 0.75rem var(--white),
+        0 0 1rem var(--dark-blue);
+    }
+
+    h3 {
+        font-weight: bold;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .team {
+        margin-top: 5rem;
+        padding: 0rem 26rem;
+
+        .members {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            flex-wrap: wrap;
+
+            img {
+                width: 30%;
+            }
+        }
+    }
+}
+
+.footer {
+    background-image: url(images/backgrounds/Footer.png);
+    color: var(--white);
+    padding: 6.25rem 12.5rem 9rem;
+    aspect-ratio: 1366/661;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    align-items: end;
+    justify-items: start;
+    
+    p {
+        text-align: center;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        img {
+            margin-top: 2.5rem;
+            width: 22rem;
+        }
+    }
+
+    a {
+        width: 22rem;
+        font-family: 'Poppins';
+        font-size: 2rem;
+        color: var(--white);
+        text-decoration: none;
+        transition: 0.2s cubic-bezier(.175,.885,.32,1.3);
+
+        &:hover {
+            letter-spacing: 0.25rem;
+        }
+    }
 }
 
 @media screen and (max-width: 780px) {
     html {
         font-size: 5px;
     }
+}
+
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+    text-shadow:
+    0 0 0.2rem var(--white);
+    z-index: 2;
+}
+
+.crud {
+    background-image: url(images/backgrounds/Crud.png);
+    padding: 6.25rem 9rem 9rem;
+    height: 100vh;
+    width: 100vw;
+    color: var(--white);
+}
+
+.vertical-line {
+    width: 0.1rem;
+    height: 2.5rem;
+    background-color: var(--white);
+    border-radius: 5rem;
+}
+
+#check {
+    display: none;
+}
+
+#open-menu {
+    font-size: 3.2rem;
+    margin-left: 1rem;
+
+    cursor: pointer;
+}
+
+#crud-nav {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+
+    .acount {
+        max-height: 5rem;
+        img {
+            height: 100%;
+        }
+    }
+}
+
+.sidebar {
+    background: linear-gradient(225deg, var(--dark-blue), var(--blue));
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    transition: 0.5s cubic-bezier(.175,.45,.32,1);
+    width: 0;
+}
+
+#check:checked ~ .sidebar {
+    width: 44.5em;
 }
