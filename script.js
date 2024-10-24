@@ -6,59 +6,64 @@ const closeForm = document.getElementById("close-form");
 const formContainer = document.getElementById("form-container");
 const signUp = document.getElementById("sign-up");
 
-previous.addEventListener("click", () => {
-  const advantagesElements = Array.from(
-    document.querySelectorAll(".advantage")
-  );
-  let item = advantagesElements.pop();
-  advantagesElements[0].parentNode.prepend(item);
-  advantagesElements.unshift(item);
+var path = window.location.pathname;
+var page = path.split("/").pop();
 
-  advantagesElements.forEach((adventage, index) => {
-    position = Math.abs(index - centerIndex);
+if (page === "index.html") {
+  previous.addEventListener("click", () => {
+    const advantagesElements = Array.from(
+      document.querySelectorAll(".advantage")
+    );
+    let item = advantagesElements.pop();
+    advantagesElements[0].parentNode.prepend(item);
+    advantagesElements.unshift(item);
 
-    if (position === 0) {
-      adventage.classList.remove("secondary");
-      adventage.classList.remove("hidden");
-      adventage.classList.add("main");
-    } else if (position === 1) {
-      adventage.classList.remove("main");
-      adventage.classList.remove("hidden");
-      adventage.classList.add("secondary");
-    } else {
-      adventage.classList.remove("main");
-      adventage.classList.remove("secondary");
-      adventage.classList.add("hidden");
-    }
+    advantagesElements.forEach((adventage, index) => {
+      position = Math.abs(index - centerIndex);
+
+      if (position === 0) {
+        adventage.classList.remove("secondary");
+        adventage.classList.remove("hidden");
+        adventage.classList.add("main");
+      } else if (position === 1) {
+        adventage.classList.remove("main");
+        adventage.classList.remove("hidden");
+        adventage.classList.add("secondary");
+      } else {
+        adventage.classList.remove("main");
+        adventage.classList.remove("secondary");
+        adventage.classList.add("hidden");
+      }
+    });
   });
-});
 
-next.addEventListener("click", () => {
-  const advantagesElements = Array.from(
-    document.querySelectorAll(".advantage")
-  );
-  let item = advantagesElements.shift();
-  advantagesElements[0].parentNode.appendChild(item);
-  advantagesElements.push(item);
+  next.addEventListener("click", () => {
+    const advantagesElements = Array.from(
+      document.querySelectorAll(".advantage")
+    );
+    let item = advantagesElements.shift();
+    advantagesElements[0].parentNode.appendChild(item);
+    advantagesElements.push(item);
 
-  advantagesElements.forEach((adventage, index) => {
-    position = Math.abs(index - centerIndex);
+    advantagesElements.forEach((adventage, index) => {
+      position = Math.abs(index - centerIndex);
 
-    if (position === 0) {
-      adventage.classList.remove("secondary");
-      adventage.classList.remove("hidden");
-      adventage.classList.add("main");
-    } else if (position === 1) {
-      adventage.classList.remove("main");
-      adventage.classList.remove("hidden");
-      adventage.classList.add("secondary");
-    } else {
-      adventage.classList.remove("main");
-      adventage.classList.remove("secondary");
-      adventage.classList.add("hidden");
-    }
+      if (position === 0) {
+        adventage.classList.remove("secondary");
+        adventage.classList.remove("hidden");
+        adventage.classList.add("main");
+      } else if (position === 1) {
+        adventage.classList.remove("main");
+        adventage.classList.remove("hidden");
+        adventage.classList.add("secondary");
+      } else {
+        adventage.classList.remove("main");
+        adventage.classList.remove("secondary");
+        adventage.classList.add("hidden");
+      }
+    });
   });
-});
+}
 
 signUp.addEventListener("click", () => {
   formContainer.classList.remove("closed-form");
