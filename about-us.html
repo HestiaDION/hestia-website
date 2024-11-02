@@ -9,6 +9,10 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
+    />
   </head>
   <body
     style="
@@ -23,34 +27,23 @@
     <div id="preloader" class="blue-preloader"></div>
 
     <div id="form-container" class="closed-form">
-      <form action="sign-up">
+      <form id="login-form">
         <div class="form-title">
-          <h3>Sign up</h3>
+          <h3>Login</h3>
           <i class="material-icons" id="close-form">close</i>
         </div>
-        <div class="input-container">
-          <input
-            type="text"
-            name="email"
-            id="email"
-            pattern="^[\w\-\.]+@([\w\-]+\.)+[\w\-]{2,}$"
-            placeholder=""
-            required
-          />
-          <label for="email">E-mail</label>
+        <div class="login-options">
+          <button type="submit" onclick="redirectToAdminLogin()">
+            <span class="material-symbols-outlined">
+              admin_panel_settings
+            </span>
+            Painel Admin
+          </button>
+          <button type="submit" onclick="redirectToSecretAreaLogin()">
+            <span class="material-symbols-outlined"> lock </span>
+            Página Secreta
+          </button>
         </div>
-        <div class="input-container">
-          <input
-            type="password"
-            name="password"
-            pattern=".{8,}"
-            id="password"
-            placeholder=""
-            required
-          />
-          <label for="password">Senha</label>
-        </div>
-        <input type="submit" value="Entrar" />
       </form>
     </div>
 
@@ -75,7 +68,7 @@
     </div>
     <div class="our-mission background">
       <img src="images/Group photo.svg" alt="" width="50%" />
-      <div class="content">
+      <div class="our-mission-content">
         <h1>Nossa missão</h1>
         <p>
           No <strong>DION</strong>, acreditamos que o

@@ -1,68 +1,42 @@
-let centerIndex = 2;
-const previous = document.getElementById("previous");
-const next = document.getElementById("next");
 const loader = document.getElementById("preloader");
 const closeForm = document.getElementById("close-form");
 const formContainer = document.getElementById("form-container");
 const signUp = document.getElementById("sign-up");
 
+let centerIndex = 2;
+const previous = document.getElementById("previous");
+const next = document.getElementById("next");
+
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
 if (page === "index.html") {
-  previous.addEventListener("click", () => {
-    const advantagesElements = Array.from(
-      document.querySelectorAll(".advantage")
-    );
-    let item = advantagesElements.pop();
-    advantagesElements[0].parentNode.prepend(item);
-    advantagesElements.unshift(item);
+  const advantagesStack = Array.from(document.querySelectorAll(".advantage"));
 
-    advantagesElements.forEach((adventage, index) => {
-      position = Math.abs(index - centerIndex);
-
-      if (position === 0) {
-        adventage.classList.remove("secondary");
-        adventage.classList.remove("hidden");
-        adventage.classList.add("main");
-      } else if (position === 1) {
-        adventage.classList.remove("main");
-        adventage.classList.remove("hidden");
-        adventage.classList.add("secondary");
-      } else {
-        adventage.classList.remove("main");
-        adventage.classList.remove("secondary");
-        adventage.classList.add("hidden");
-      }
+  const updateClasses = () => {
+    advantagesStack.forEach((advantage, index) => {
+      const position = Math.abs(index - centerIndex);
+      advantage.classList.toggle("main", position === 0);
+      advantage.classList.toggle("secondary", position === 1);
+      advantage.classList.toggle("hidden", position > 1);
     });
-  });
+  };
 
-  next.addEventListener("click", () => {
-    const advantagesElements = Array.from(
-      document.querySelectorAll(".advantage")
-    );
-    let item = advantagesElements.shift();
-    advantagesElements[0].parentNode.appendChild(item);
-    advantagesElements.push(item);
+  const shiftCarousel = (direction) => {
+    let item;
+    if (direction === "previous") {
+      item = advantagesStack.pop(); // Remove the last item
+      advantagesStack.unshift(item); // Add it to the front
+    } else {
+      item = advantagesStack.shift(); // Remove the first item
+      advantagesStack.push(item); // Add it to the back
+    }
+    
+    updateClasses();
+  };
 
-    advantagesElements.forEach((adventage, index) => {
-      position = Math.abs(index - centerIndex);
-
-      if (position === 0) {
-        adventage.classList.remove("secondary");
-        adventage.classList.remove("hidden");
-        adventage.classList.add("main");
-      } else if (position === 1) {
-        adventage.classList.remove("main");
-        adventage.classList.remove("hidden");
-        adventage.classList.add("secondary");
-      } else {
-        adventage.classList.remove("main");
-        adventage.classList.remove("secondary");
-        adventage.classList.add("hidden");
-      }
-    });
-  });
+  previous.addEventListener("click", () => shiftCarousel("previous"));
+  next.addEventListener("click", () => shiftCarousel("next"));
 }
 
 signUp.addEventListener("click", () => {
@@ -79,3 +53,11 @@ window.addEventListener("load", function () {
   loader.classList.add("loaded");
   document.body.classList.add("scrolling-allowed");
 });
+
+function redirectToAdminLogin() {
+  document.getElementById("login-form").action = "/login-admin.html";
+}
+
+function redirectToSecretAreaLogin() {
+  document.getElementById("login-form").action = "/login-secret-area.html";
+}
