@@ -24,7 +24,7 @@ git clone https://github.com/HestiaDION/hestia-website.git
 2. Com uma IDE de sua preferência rode a página `index.html` para a visualização da Landing Page.
 ## Licença
 [**MIT License**](https://choosealicense.com/licenses/mit/)
-## 🔗 Links
+## Links 🔗 
 - [![Instagram](https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white)](https://github.com/HestiaDION)
 - [Instagram](https://www.instagram.com/hestia.oficial/)
 ## 
